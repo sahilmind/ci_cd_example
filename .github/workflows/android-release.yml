@@ -37,8 +37,25 @@ jobs:
           channel: 'stable'
           cache: true
       # 13
+      - name: Clean project
+        run: flutter clean
+      # 13
       - name: Get dependencies
         run: flutter pub get
       # 14
       - name: Start release build
         run: flutter build appbundle
+
+deploy:
+  name: Deploy android build
+  # 1
+  needs: build
+  runs-on: ubuntu-latest
+
+  steps:
+    - uses: actions/checkout@v1
+    #2
+    - name: Get Android Build from artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: android-release
