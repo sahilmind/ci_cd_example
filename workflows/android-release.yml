@@ -1,0 +1,9 @@
+# 1. We define the name.
+name: Android Release
+
+# 2. We define the when we have to start the action like: on push or pull_request
+on:
+
+  # 3. We are defining the action on push.
+  push:
+    branches: ['master']
