@@ -45,10 +45,17 @@ jobs:
       # 14
       - name: Start release build
         run: flutter build appbundle
+      # 8
+      - name: Upload Android Release
+        uses: actions/upload-artifact@v2
+        with:
+          name: android-release
+          path: build/app/outputs/bundle/release/app-release.aab
 
   deploy:
     name: Deploy android build
     # 1
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
