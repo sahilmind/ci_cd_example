@@ -1,4 +1,3 @@
-
 # 1. We define the name.
 name: Android Release
 
@@ -7,7 +6,7 @@ on:
 
   # 3. We are defining the action on push.
   push:
-    branches: ['master']
+    branches: [ 'master' ]
 
   #4. Event to trigger workflow.
   workflow_dispatch:
@@ -41,6 +40,9 @@ jobs:
       #
       - name: Analyze project source
         run: dart analyze --fatal-infos
+      #
+      - name: Run tests
+        run: flutter test
       # 14
       - name: Start release build
         run: flutter build appbundle
