@@ -28,12 +28,14 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: "12.x"
+          cache: true
       # 11
       - uses: subosito/flutter-action@v2
         with:
           # 12
           flutter-version: "3.10.3"
           channel: 'stable'
+          cache: true
       # 13
       - name: Get dependencies
         run: flutter pub get
