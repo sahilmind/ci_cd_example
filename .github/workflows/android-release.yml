@@ -35,6 +35,8 @@ jobs:
       # 13
       - name: Get dependencies
         run: flutter pub get
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
       # 14
       - name: Start release build
         run: flutter build appbundle
