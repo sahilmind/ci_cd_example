@@ -46,16 +46,16 @@ jobs:
       - name: Start release build
         run: flutter build appbundle
 
-deploy:
-  name: Deploy android build
-  # 1
-  needs: build
-  runs-on: ubuntu-latest
+  deploy:
+    name: Deploy android build
+    # 1
+    needs: build
+    runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v1
-    #2
-    - name: Get Android Build from artifacts
-      uses: actions/download-artifact@v2
-      with:
-        name: android-release
+    steps:
+      - uses: actions/checkout@v1
+      #2
+      - name: Get Android Build from artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: android-release
