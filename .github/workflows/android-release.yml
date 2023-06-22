@@ -43,6 +43,7 @@ jobs:
       #
       - name: Check test coverage
         run: flutter test --coverage
+        run:
       #
       - name: Run tests
         run: flutter test
