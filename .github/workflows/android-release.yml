@@ -47,15 +47,15 @@ jobs:
       - name: Run tests
         run: flutter test
       #
-      - name: Sign AAB
-        id: sign
-        uses: r0adkll/sign-android-release@v1
-        with:
-          releaseDirectory: build/app/outputs/bundle/release
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_STORE_PASSWORD }}
+#      - name: Sign AAB
+#        id: sign
+#        uses: r0adkll/sign-android-release@v1
+#        with:
+#          releaseDirectory: build/app/outputs/bundle/release
+#          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+#          alias: ${{ secrets.ALIAS }}
+#          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+#          keyPassword: ${{ secrets.KEY_STORE_PASSWORD }}
       # 14
       - name: Start release build
         run: flutter build appbundle
