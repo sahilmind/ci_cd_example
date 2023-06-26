@@ -48,7 +48,6 @@ jobs:
         run: flutter test
       #
       - name: Sign AAB
-        uses: sahilmind/ci_cd_example@v1
         with:
           releaseDirectory: build/app/outputs/bundle/release
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
